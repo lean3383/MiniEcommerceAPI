@@ -1,0 +1,13 @@
+services:
+  backend:
+    build: .
+    restart: always
+    command: sh -c "python manage.py makemigrations &&
+                    python manage.py migrate &&
+                    gunicorn djangoSettings.wsgi:application --bind 0.0.0.0:8000"
+    ports:
+      - 80:8000
+    volumes:
+      - ./backend:/app
+    env_file:
+      - .env

@@ -1,0 +1,7 @@
+.git
+.gitignore
+*.pyc
+migrations/*
+backend/db.sqlite3
+.env.sample
+readme.txt
